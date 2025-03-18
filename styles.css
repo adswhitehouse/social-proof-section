@@ -1,0 +1,318 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Variables */
+:root {
+  /* Font */
+  --ff-primary: "League Spartan", sans-serif;
+
+  /* Colors */
+  --white: #fff;
+  --purple-1: #512051;
+  --purple-2: #927b91;
+  --purple-3: #f7f2f7;
+  --pink: #ee69a4;
+
+  /* Font Sizes */
+  --fs-1: 3.5rem;
+  --fs-2: 1.188rem;
+  --fs-3: 1.063rem;
+
+  /* Font Weights */
+  --fw-1: 700;
+  --fw-2: 500;
+  --fw-3: 400;
+}
+
+/* Utility Classes */
+/* Font */
+.ff-primary {
+  font-family: var(--ff-primary);
+}
+
+/* Colors */
+.white {
+  color: var(--white);
+}
+
+.purple-1 {
+  color: var(--purple-1);
+}
+
+.purple-2 {
+  color: var(--purple-2);
+}
+
+.pink {
+  color: var(--pink);
+}
+
+/* Background Colors */
+.white-bg {
+  background-color: var(--white);
+}
+
+.purple-1-bg {
+  background-color: var(--purple-1);
+}
+
+.purple-3-bg {
+  background-color: var(--purple-3);
+}
+
+/* Text Presets */
+.tp-1 {
+  font-size: var(--fs-1);
+  font-weight: var(--fw-1);
+}
+
+.tp-2 {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-2);
+}
+
+.tp-3 {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-1);
+}
+
+.tp-4 {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-2);
+}
+
+.tp-5 {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-3);
+}
+
+/* Body */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main */
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 10vw);
+  width: 90vw;
+}
+
+/* Heading */
+.heading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Heading Left */
+.heading-left {
+  padding-right: 3rem;
+}
+
+.heading-left h1 {
+  max-width: 30rem;
+  line-height: 90%;
+}
+
+.heading-left p {
+  max-width: 32.5rem;
+  line-height: 120%;
+  margin-top: 3vw;
+}
+
+/* Heading Right */
+.heading-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 27rem;
+  width: 100%;
+  gap: 2rem;
+  padding-block: 1rem;
+  border-radius: 0.5rem;
+}
+
+.r1 {
+  margin-right: 6rem;
+}
+
+.r2 {
+  margin-right: 3rem;
+}
+
+.rating p {
+  transform: translateY(10%);
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+}
+
+/* Testimonials */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.t1 {
+  transform: translateY(-2rem);
+}
+
+.t2 {
+  transform: translateY(-1rem);
+}
+
+.testimonial-box {
+  padding: 2.5rem 2rem;
+  border-radius: 0.75rem;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.author img {
+  width: 2.5rem;
+  border-radius: 50%;
+}
+
+/* Media Query */
+@media screen and (max-width: 63rem) {
+  /* Variables */
+  :root {
+    --fs-1: 2.5rem;
+  }
+
+  /* Main */
+  main {
+    height: unset;
+    padding-block: 5rem;
+  }
+
+  /* Heading */
+  .heading {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Heading Left */
+  .heading-left {
+    width: 100%;
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .heading-left h1 {
+    max-width: 100%;
+  }
+
+  .heading-left p {
+    max-width: 100%;
+    margin-block: 1rem 2.5rem;
+  }
+
+  /* Heading Right */
+  .heading-right {
+    align-items: center;
+  }
+
+  .rating {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .r1,
+  .r2 {
+    margin-right: 0;
+  }
+
+  /* Testimonials */
+  .testimonials {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .t1,
+  .t2 {
+    transform: unset;
+  }
+}
